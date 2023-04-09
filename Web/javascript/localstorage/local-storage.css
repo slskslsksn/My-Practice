@@ -1,0 +1,16 @@
+button {
+  /* font-weight: bold; */
+  background-color: #00FFFF;
+  cursor: pointer;
+  border: 0;
+  width: 120px;
+  padding: 10px 25px;
+}
+
+button:hover{
+  background-color: black;
+  color:#00FFFF;
+  transition: all .35s;
+  /*cursor: pointer;*/
+  /*wait, crosshair, not-allowed, zoom-in, zoom-out, grab, help*/
+}
