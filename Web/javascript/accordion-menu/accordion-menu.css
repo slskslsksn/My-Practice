@@ -42,10 +42,13 @@ html, body {
 #btn-all-close:hover {
 	background-color: yellow;
 	color: #000;
-	transition: all .35s;
+	transition: all 5.35s;
 }
 
-.active {}
+.active {
+  display: block;
+  height: 400px;
+}
 
 
 
