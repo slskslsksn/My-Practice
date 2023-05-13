@@ -21,3 +21,15 @@ $('.show a').click(function () {
 $('.slide a').click(function () {
   $('.slide .box').slideToggle();
 });
+
+/* fade */
+// () 안에 fast, slow, number로 속도 조절
+// $('.fade a').mouseenter(function () {
+//   $('.fade .box').fadeIn('fast');
+// });
+// $('.fade a').mouseleave(function () {
+//   $('.fade .box').fadeOut('slow');
+// });
+$('.fade a').click(function () {
+  $('.fade .box').fadeToggle(1000);
+});

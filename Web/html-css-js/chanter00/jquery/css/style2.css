@@ -20,7 +20,7 @@ div.box{
   display: none;
 }
 
-div.wrapper{
+div.inline{
   display: inline-flex;
   margin: 0px 10px;
 }
