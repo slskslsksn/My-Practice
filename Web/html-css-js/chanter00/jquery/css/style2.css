@@ -19,3 +19,8 @@ div.box{
   color: #fff;
   display: none;
 }
+
+div.wrapper{
+  display: inline-flex;
+  margin: 0px 10px;
+}
