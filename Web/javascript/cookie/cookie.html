@@ -27,14 +27,40 @@
             <td class="align-middle"><button onClick="getCookie()">Get Cookie</button></td>
           </tr>
           <tr>
-            <td class="align-middle">쿠키 생성하기</td>
-            <td class="align-middle"><button onClick="setCookie()">Set Cookie</button></td>
+            <form id="frm-set">
+              <td class="align-middle">
+                <input class="cname" id="cname-set" placeholder="cname">
+                <input class="cvalue" id="cvalue-set" placeholder="cvalue">
+                <input class="cexpire" id="cexpire-set" placeholder="cexpire">
+              </td>
+              <td class="align-middle"><button type="submit" id="btn-set">Set Cookie</button></td>
+            </form>
+          </tr>
+          <tr>
+            <form id="frm-change">
+              <td class="align-middle">
+                <input class="cname" id="cname-change" placeholder="cname" required>
+                <input class="cvalue" id="cvalue-change" placeholder="cvalue" required>
+                <input class="cexpire" id="cexpire-change" placeholder="cexpire" required>
+              </td>
+              <td class="align-middle"><button type="submit" id="btn-change">Change Cookie</button></td>
+            </form>
+          </tr>
+          <tr>
+            <form id="frm-del">
+              <td class="align-middle">
+                <input class="cname" id="cname-del" placeholder="cname" required>
+              </td>
+              <td class="align-middle"><button type="submit" id="btn-del">Delete Cookie</button></td>
+            </form>
+          </tr>
+          <tr>
+            <td class="align-middle">전체 쿠키 삭제하기</td>
+            <td class="align-middle"><button onClick="getCookie()">Delete All Cookies</button></td>
           </tr>
         </tbody>
     </div>
     </table>
     <script src="./cookie.js"></script>
-    <!-- <header data-include="test.html"></header> -->
-    <footer data-include="test.html"></footer>
   </body>
 </html>
