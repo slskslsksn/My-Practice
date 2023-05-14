@@ -1,0 +1,41 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading{}
+.loading span{
+  display: inline-block;
+  width:15px;
+  height:15px;
+  background-color: gray;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+}
+.loading span:nth-child(1){
+  background-color: lightcoral;
+}
+.loading span:nth-child(2){
+  background-color: lightskyblue;
+  animation-delay: 0.2s;
+}
+.loading span:nth-child(3){
+  background-color: lightgreen;
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0%, 100%{
+    opacity: 0;
+    transform: scale(0.5);
+    /* scale: 0.5; */
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1.2);
+    /* scale: 1; */
+  }
+}
+
