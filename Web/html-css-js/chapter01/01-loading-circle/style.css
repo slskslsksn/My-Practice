@@ -5,7 +5,6 @@ body{
   height: 100vh;
 }
 
-.loading{}
 .loading span{
   display: inline-block;
   width:15px;
