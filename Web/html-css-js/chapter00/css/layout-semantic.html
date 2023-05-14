@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title>레이아웃</title>
+  <style>
+    .container {
+      border: 1px solid red;
+      display: inline-block;
+    }
+
+    main {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    main>* {
+      margin: 10px;
+    }
+
+    article {
+      background-color: #aaa;
+      display: inline-block;
+      text-align: center;
+    }
+
+    header {
+      background-color: mediumpurple;
+      overflow: hidden;
+    }
+
+    header span {
+      display: inline-block;
+    }
+
+    header article,
+    header span {
+      width: 100px;
+      margin: 10px;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    header article:first-child {
+      float: left;
+    }
+
+    header article:last-child {
+      float: right;
+    }
+
+    section {
+      background-color: lightgreen;
+    }
+
+    section article {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      margin: 10px;
+    }
+
+    section article:nth-child(1) {
+      float: left;
+    }
+
+    section article:nth-child(3) {
+      float: right;
+    }
+
+    footer {
+      background-color: lightskyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container wrapper">
+    가장 상위 컨테이너
+    <main>main: 문서의 주된 내용(필요하면 넣기)
+      <header>
+        <article>article</article>
+        <span>header</span>
+        <article>article</article>
+      </header>
+      <section>section</section>
+      <section>
+        <article>article</article>
+        <article>article</article>
+        <article>article</article>
+      </section>
+      <footer>footer</footer>
+    </main>
+  </div>
+</body>
+</html>

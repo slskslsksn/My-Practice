@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가로배치</title>
+  <style>
+    .parent {
+      border: 1px red solid;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .left {
+      float: left;
+      width: 150px;
+      height: 150px;
+      background-color: yellow;
+    }
+
+    .right {
+      float: right;
+      width: 200px;
+      height: 150px;
+      background-color: orange;
+    }
+  </style>
+  <style>
+    .clear .none,
+    .no-clear {
+      color: white;
+      background-color: blueviolet;
+      width: 450px;
+      height: 30px;
+    }
+
+    .clear .both {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>float</h1>
+  <h3> - float 사용시 parrent는 child가 없다고 판단해서 height가 사라짐</h3>
+  <h3> - 이를 해결하기 위해서는 child와 똑같은 height를 지정해 주던가 overflow 속성을 사용해야함</h3>
+  <div class="float parent">
+    <div class="left">float:left</div>
+    <div class="right">float: right</div>
+  </div>
+  <h1>clear</h1>
+  <h3> - float 밑에있으면 float를 주지 않아도 float가 적용되므로 clear 필요</h3>
+  <h3> - float가 left 또는 right만 정해져있고 paret 크기가 남는다면 clear를 하지 않으면 남는공간을 채움</h3>
+  <div class="clear parent">
+    <div class="none">float: none</div>
+    <div class="left">float:left</div>
+    <div class="right">float: right</div>
+    <div class="no-clear">no clear</div>
+  </div>
+
+  <div class="clear parent">
+    <div class="none">float: none</div>
+    <div class="left">float:left</div>
+    <div class="right">float: right</div>
+    <div class="none both">clear: both</div>
+  </div>
+
+  <div class="clear parent">
+    <div class="none">float: none</div>
+    <div class="left">float:left</div>
+    <div style="clear: right;">clear: right</div>
+  </div>
+</body>
+</html>
