@@ -1,0 +1,53 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+body{
+  font-family: 'Montserrat',  sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+a{
+  color:#222;
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown{
+  width: 200px;
+}
+
+.dropdown-btn{
+  width: inherit;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: yellowgreen;
+}
+
+.dropdown-submenu{
+  display: none;
+  width: inherit;
+  box-shadow: 0 0 10px #ddd;
+}
+.dropdown-submenu a{
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-submenu{
+  display: block;
+}
+
+.dropdown-submenu a:hover{
+  background-color: #eee;
+}
