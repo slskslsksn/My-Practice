@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title>Position</title>
+  <style>
+    .parrent {
+      position: absolute;
+    }
+
+    .child {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+
+    #child1 {
+      position: fixed;
+      background: cyan;
+      opacity: 0.5
+    }
+
+    #child2 {
+      position: ab;
+      background-color: green;
+      opacity: 0.8;
+      bottom: 0px;
+      /* left: 50%; */
+    }
+
+    #childe3 {
+      position: sticky;
+    }
+  </style>
+</head>
+<body>
+  <div class="parrent">
+    <div class="child" id="child1">1</div>
+    <div class="child" id="child2">2</div>
+    <div class="child" id="child3">3</div>
+  </div>
+</body>
+</html>
