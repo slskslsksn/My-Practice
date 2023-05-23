@@ -1,0 +1,77 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a{
+  text-decoration: none;
+  color: #222;
+}
+
+.sns{
+  background-color: #f8f8f8;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+}
+
+.sns a{
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 40px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.sns a::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background-color: blue;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.sns a:hover::after{
+  height: 100%;
+}
+
+.sns a:nth-child(1)::after{
+background-color: #3b5999;
+}
+.sns a:nth-child(2)::after{
+  background-color: #55acee;
+}
+.sns a:nth-child(3)::after{
+  background-color: #dd4b39;
+}
+.sns a:nth-child(4)::after{
+  background-color: #0077b5;
+}
+.sns a:nth-child(5)::after{
+  background-color: #e4405f;
+}
+
+.sns a .fa{
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.sns a:hover .fa{
+  color: #fff;
+  transform: rotateX(360deg);
+}
