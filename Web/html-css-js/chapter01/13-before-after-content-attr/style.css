@@ -1,0 +1,52 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #dce35b, #45b649);
+  height: 100vh;
+}
+
+a{
+  text-decoration: none;
+  color: #222;
+}
+
+.gnb {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.gnb a {
+  content: attr('data-link');
+  position: relative;
+  width: 80px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  overflow: hidden;
+}
+.gnb a::before,
+.gnb a::after{
+  content: attr(data-link);
+  position: absolute;
+  width: 100%;
+  transition: 0.3s;
+}
+.gnb a::before{
+  top: 0;
+  left: 0;
+}
+.gnb a::after{
+  top: 100%;
+  left: 0;
+  color: #45b649
+}
+
+.gnb a:hover::before{
+  top: -100%;
+}
+.gnb a:hover::after{
+  top: 0;
+}
