@@ -53,6 +53,8 @@ body{
 .progress-level {
   height: 10px;
   background: linear-gradient(to right, rgb(219, 99, 119), gold);
+  animation-name: ani;
+  animation-duration: 1s;
   animation-fill-mode: both;
 
 }
