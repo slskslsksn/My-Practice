@@ -25,7 +25,7 @@
     }
   </style>
   <style>
-    .clear .none,
+    .none,
     .no-clear {
       color: white;
       background-color: blueviolet;
@@ -34,6 +34,15 @@
     }
 
     .clear .both {
+      clear: both;
+    }
+  </style>
+  <style>
+    .after::after {
+      content: '::after clear:both';
+      color: white;
+      background-color: blueviolet;
+      display: block;
       clear: both;
     }
   </style>
@@ -48,7 +57,7 @@
   </div>
   <h1>clear</h1>
   <h3> - float 밑에있으면 float를 주지 않아도 float가 적용되므로 clear 필요</h3>
-  <h3> - float가 left 또는 right만 정해져있고 paret 크기가 남는다면 clear를 하지 않으면 남는공간을 채움</h3>
+  <h3> - float가 left 또는 right만 정해져있고 parent 크기가 남는다면 clear를 하지 않으면 남는공간을 채움</h3>
   <div class="clear parent">
     <div class="none">float: none</div>
     <div class="left">float:left</div>
@@ -67,6 +76,15 @@
     <div class="none">float: none</div>
     <div class="left">float:left</div>
     <div style="clear: right;">clear: right</div>
+  </div>
+
+  <h1>::after - clear</h1>
+  <h3> - div를 추가하지 않고 ::after를 사용해 clear 적용</h3>
+  <div class="after parent">
+    <div class="none">float: none</div>
+    <div class="left">float:left</div>
+    <div class="right">float: right</div>
+    <div class="no-clear">no clear</div>
   </div>
 </body>
 </html>
