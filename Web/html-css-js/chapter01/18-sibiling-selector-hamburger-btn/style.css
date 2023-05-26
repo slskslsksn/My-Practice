@@ -6,8 +6,6 @@ body{
   margin: 0;
 }
 
-.content {}
-
 /* Trigger Button */
 #trigger {
   display: none;
@@ -48,8 +46,4 @@ label[for=trigger] span:nth-child(3) {
 #trigger:checked + label[for=trigger] span:nth-child(3){
   transform: rotate(-45deg);
   top: 50%;
-}
-
-#trigger:not(:checked) + label span:nth-child(2){
-  transition-delay: 0s
 }
