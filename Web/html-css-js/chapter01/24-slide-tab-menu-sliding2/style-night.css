@@ -1,0 +1,76 @@
+label[for=switch-on],
+label[for=switch-off] {
+  position: absolute;
+  font-size: 3em;
+  right: 30px;
+  bottom: 30px;
+}
+label#night {
+  color: yellow;
+  visibility: hidden;
+}
+
+input[name=switch],
+input[name=tabmenu-v] {
+  display: none;
+}
+
+#switch-on:checked ~ .container-content {
+  background-color: #222;
+  color: #fff;
+}
+#switch-on:checked ~ label#night {
+  visibility: visible;
+} 
+
+#switch-on:checked ~ label#day {
+  visibility: hidden;
+}
+#switch-on:checked ~ .container-content .tab-inner {
+  display: none;
+}
+#switch-off:checked ~ .container-content .tab-inner-v {
+  display: none;
+}
+
+
+.tab-inner-v h1 {
+  text-align: center;
+}
+.items-v {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 1600px;
+  transition: 0.3s;
+}
+
+.btn-v {
+  text-align: center;
+}
+.btn-v label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+
+input#tab1-v:checked ~ .btn-v label[for=tab1-v],
+input#tab2-v:checked ~ .btn-v label[for=tab2-v],
+input#tab3-v:checked ~ .btn-v label[for=tab3-v]{
+  background-color: crimson;
+  border-radius: 50%;
+}
+
+input#tab1-v:checked ~ .tabs .items-v {
+  top: 0;
+}
+input#tab2-v:checked ~ .tabs .items-v {
+  top: -400px;;
+}
+input#tab3-v:checked ~ .tabs .items-v {
+  top: -800px;;
+}

@@ -2,15 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  
   margin: 0;
   font-family: 'Raleway', sans-serif;
   line-height: 1.5em;
   font-weight: 300;
   color: #222;
+}
+
+.container-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .tab-inner h1 {
@@ -34,7 +40,7 @@ input[name=tabmenu] {
   width: 2400px;
   transition: 0.3s;
 }
-.items div {
+.common div {
   width: 800px;
   height: 400px;
   float: left;
@@ -44,16 +50,16 @@ input[name=tabmenu] {
   box-sizing: border-box;
 }
 
-.items div img {
+.common div img {
   width: 100px;
   border-radius: 50%;
 }
 
-.items div p b {
+.common div p b {
   display: block;
 }
 
-.items div p span {
+.common div p span {
   color: orange
 }
 
