@@ -1,0 +1,116 @@
+body{
+  margin: 0;
+}
+input[name=tabmenu] {
+  display: none;
+}
+.tab-inner {
+  margin: 0;
+  padding: 0;
+  
+}
+.tabs {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.items {
+  position: absolute;
+  box-sizing: border-box;
+  width: 300%;
+  height: 100vh;
+  transition: 0.5s;
+}
+.items div {
+  position: relative;
+  width: 33.3333%;
+  height: 100vh;
+  float: left;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.items div:nth-child(1){
+  background-image: url('images/photo-01.jpg');
+}
+.items div:nth-child(2){
+  background-image: url('images/photo-02.jpg');
+}
+.items div:nth-child(3){
+  background-image: url('images/photo-03.jpg');
+}
+
+.items div:nth-child(1)::before,
+.items div:nth-child(2)::before,
+.items div:nth-child(3)::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transition:0.5s;
+}
+
+.items div:nth-child(1)::before{
+  background: linear-gradient(135deg, gold, transparent);
+}
+.items div:nth-child(2)::before{
+  background: linear-gradient(135deg, crimson, transparent);
+}
+.items div:nth-child(3)::before{
+  background: linear-gradient(135deg, royalblue, transparent);
+}
+
+.items div h1 {
+  position: relative;
+  font-size: 150px;
+  color: white;
+  text-align: center;
+  transform: translateY(-100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.btn {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  bottom: 0;
+  background-color: #0005;
+  line-height: 50px;
+}
+.btn label {
+  color: white;
+  font-size: 15px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+input#tab1:checked ~ .btn label[for=tab1],
+input#tab2:checked ~ .btn label[for=tab2],
+input#tab3:checked ~ .btn label[for=tab3] {
+  color: tomato;
+}
+
+input#tab1:checked ~ .tabs .items{
+  left: 0;
+}
+
+input#tab2:checked ~ .tabs .items{
+  left: -100%;
+}
+
+input#tab3:checked ~ .tabs .items{
+  left: -200%;
+}
+
+input#tab1:checked ~ .tabs .items div:nth-child(1) h1,
+input#tab2:checked ~ .tabs .items div:nth-child(2) h1,
+input#tab3:checked ~ .tabs .items div:nth-child(3) h1{
+  transform: translateY(100px);
+  opacity: 1;
+  visibility: visible;
+}
