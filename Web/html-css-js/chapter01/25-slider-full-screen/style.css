@@ -1,0 +1,76 @@
+body{
+  margin: 0;
+}
+
+input[name=tabmenu] {
+  display: none;
+}
+
+.tabs {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.items {
+  position: absolute;
+  width: 300%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.items div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  width: 33.33333%;
+  height: 100vh;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.items div:nth-child(1){
+  background-color: dodgerblue;
+}
+.items div:nth-child(2){
+  background-color: yellowgreen;
+}
+.items div:nth-child(3){
+  background-color: crimson;
+}
+
+.items div h1 {
+  font-size: 80px;
+  font-weight: normal;
+}
+.btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn label {
+  display: inline-block;
+  background-color: #fff;
+  width: 100px;
+  height: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input#tab1:checked ~ .btn label[for=tab1],
+input#tab2:checked ~ .btn label[for=tab2],
+input#tab3:checked ~ .btn label[for=tab3] {
+  background-color: #000;
+}
+
+input#tab1:checked ~ .tabs .items{
+  left: 0;
+}
+input#tab2:checked ~ .tabs .items{
+  left: -100%;
+}
+input#tab3:checked ~ .tabs .items{
+  left: -200%;
+}
