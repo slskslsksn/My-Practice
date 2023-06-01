@@ -1,0 +1,75 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  background-image: url(images/snow-photo.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+body::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0008;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  text-align: center;
+}
+.search h1 {
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+.search input {
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  /* 글자 입력시 이격 방지 */
+  vertical-align: middle;
+}
+
+.search input[type=text] {
+  width: 350px;
+  padding-left: 40px;
+  border-radius: 40px 0 0 40px;
+}
+.search input[type=text]::placeholder {
+  font-style: italic;
+}
+.search input[type=text]:focus::placeholder {
+  visibility: hidden;
+}
+
+.search input[type=submit] {
+  width: 130px;
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  background-color: orange;
+  color: #fff;
+}
+.search input[type=submit]:hover{
+  background-color: gold;
+}
+.search input[type=submit]:active {
+  background-color: goldenrod;
+}
