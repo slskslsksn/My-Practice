@@ -1,21 +1,13 @@
 import './App.css';
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
+import { Counter } from './Counter';
 function App() {
-  let name = '윤준명';
-  const style = {
-    app: {
-      backgroundColor: 'black',
-      color: 'blue',
-    },
-    h2: {
-      color: 'white',
-    },
-  };
   return (
-    <div className="App" style={style.app}>
+    <div className="App">
       <MyHeader />
-      <h2 style={style.h2}>안녕 리액트 {name}</h2>
+      <Counter />
+
       <MyFooter />
     </div>
   );
