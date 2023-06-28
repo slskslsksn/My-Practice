@@ -5,7 +5,7 @@ const DiaryItem = ({ author, content, create_date, emotion, id, onRemove, onEdit
   const toggleIsEdit = () => setIsEdit(!isEdit);
 
   const [localContent, setLocalContent] = useState(content);
-  const loaclContentInput = useRef();
+  const localContentInput = useRef();
 
   const handleRemove = () => {
     console.log(id);
@@ -21,7 +21,7 @@ const DiaryItem = ({ author, content, create_date, emotion, id, onRemove, onEdit
 
   const handleEdit = () => {
     if (localContent.length < 5) {
-      loaclContentInput.current.focus();
+      localContentInput.current.focus();
       return;
     }
 
@@ -43,7 +43,7 @@ const DiaryItem = ({ author, content, create_date, emotion, id, onRemove, onEdit
       <div className="content">
         {isEdit ? (
           <>
-            <textarea ref={loaclContentInput} value={localContent} onChange={(e) => setLocalContent(e.target.value)} />
+            <textarea ref={localContentInput} value={localContent} onChange={(e) => setLocalContent(e.target.value)} />
           </>
         ) : (
           <>{content}</>
