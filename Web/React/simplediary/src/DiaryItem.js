@@ -8,7 +8,6 @@ const DiaryItem = ({ author, content, create_date, emotion, id, onRemove, onEdit
   const localContentInput = useRef();
 
   const handleRemove = () => {
-    console.log(id);
     if (window.confirm(`${id}번째 일기를 정말 삭제하시겠습니까?`)) {
       onRemove(id);
     }
