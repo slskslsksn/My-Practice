@@ -5,17 +5,32 @@
 </body>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script>
+<script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+<script type="text/babel">
   const root = document.getElementById('root');
-  const h3 = React.createElement('h3', {
-    id: 'title',
-    onMouseEnter: () => console.log('mouse enter'),
-  }, `I'm a H3~!`);
-  const btn = React.createElement('button', {
-    onClick: () => console.log('im clicked'),
-    style: {backgroundColor: 'tomato'},
-  }, 'Click me');
-  const container = React.createElement('div', {id: 'container'}, [h3, btn]);
-  ReactDOM.render(container, root);
+  const Button = () => (
+    <button
+      style={{ backgroundColor: 'tomato', }}
+      onClick={() => console.log('Button Clicked')}
+    >
+      Click Me
+    </button>
+  );
+  const Title = () => (
+    <h3
+      id="title"
+      onMouseEnter={() => console.log("mouse enter")}
+    >
+      Hello I'm a title
+    </h3>
+  );
+
+  const Container = () => (
+    <div>
+      <Title />
+      <Button />
+    </div>
+  );
+  ReactDOM.render(<Container />, root);
 </script>
 </html>
