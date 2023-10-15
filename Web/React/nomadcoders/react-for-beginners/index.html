@@ -1,82 +1,37 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <div id="root"></div>
-</body>
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
-<script type="text/babel">
-  const root = document.getElementById('root');
-  const MinutesToHours = () => {
-    const [amount, setAmout] = React.useState(0);
-    const [flipped, setFlipped] = React.useState(false);
-    const onChange = (event) => {
-      setAmout(event.target.value);
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById('root');
+    function Btn({ title, big }) {
+      return (
+        <button
+          style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: "10px",
+            fontSize: big? 18 : 16
+          }}
+        >
+          {title}
+        </button>
+      );
     }
-    const reset = () => setAmout(0);
-    const onFlip = () => { reset(); setFlipped((current) => !current); }
-    return (
-      <div>
+    const App = () => {
+      return (
         <div>
-          <label htmlFor="minutes">Minutes</label>
-          <input id="minutes" placeholder="Minutes" type="number" value={flipped ? amount * 60 : amount} onChange={onChange} disabled={flipped} />
+          <Btn title="Save Changes" big={true}/>
+          <Btn title="Confirm" big={false}/>
         </div>
-        <div>
-          <label htmlFor="hours">Hours</label>
-          <input id="hours" placeholder="Hours" type="number" value={flipped ? amount : Math.round(amount / 60)} onChange={onChange} disabled={!flipped} />
-        </div>
-        <button onClick={reset}>Reset</button>
-        <button onClick={onFlip}>Flip</button>
-      </div>
-    );
-  }
-
-  const KmToMiles = () => {
-    const CONVERT_NUM = 1.609344
-    const [amount, setAmout] = React.useState(0);
-    const [flipped, setFlipped] = React.useState(false);
-    const onChange = (event) => {
-      setAmout(event.target.value);
-    }
-    const reset = () => setAmout(0);
-    const onFlip = () => { reset(); setFlipped((current) => !current); }
-    return (
-      <div>
-        <div>
-          <label htmlFor="km">Km</label>
-          <input id="km" placeholder="Km" type="number" value={flipped ? amount * CONVERT_NUM : amount} onChange={onChange} disabled={flipped} />
-        </div>
-        <div>
-          <label htmlFor="miles">Miles</label>
-          <input id="miles" placeholder="Miles" type="number" value={flipped ? amount : amount / CONVERT_NUM} onChange={onChange} disabled={!flipped} />
-        </div>
-        <button onClick={reset}>Reset</button>
-        <button onClick={onFlip}>Flip</button>
-      </div>
-    );
-  }
-
-  const App = () => {
-    const [index, setIndex] = React.useState('xx');
-    const onSelect = (event) => {
-      setIndex(event.target.value);
-    }
-    return (
-      <div>
-        <h1>Super Converter</h1>
-        <select value={index} onChange={onSelect}>
-          <option value="xx">Select Units</option>
-          <option value="0">Minutes & Hours</option>
-          <option value="1">Km & Miles</option>
-        </select>
-        <hr/>
-        {index === 'xx' ? 'Please select your unit' : null}
-        {index === '0' ? <MinutesToHours /> : null}
-        {index === '1' ? <KmToMiles /> : null}
-      </div>
-    );
-  }
-  ReactDOM.render(<App />, root);
-</script>
+      );
+    };
+    ReactDOM.render(<App />, root);
+  </script>
 </html>
