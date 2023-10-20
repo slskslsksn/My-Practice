@@ -8,7 +8,8 @@
   <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById('root');
-    function Btn({ title, big }) {
+    function Btn({ title, changeValue }) {
+      console.log(title, 'was render');
       return (
         <button
           style={{
@@ -17,18 +18,23 @@
             padding: "10px 20px",
             border: 0,
             borderRadius: "10px",
-            fontSize: big? 18 : 16
           }}
+          onClick = {changeValue}
         >
           {title}
         </button>
       );
     }
+
+    const MemorizedBtn = React.memo(Btn);
+    
     const App = () => {
+      const [value, setValue] = React.useState('Save Changes');
+      const changeValue = () => setValue("Revert Changes");
       return (
         <div>
-          <Btn title="Save Changes" big={true}/>
-          <Btn title="Confirm" big={false}/>
+          <MemorizedBtn title={value} changeValue={changeValue}/>
+          <MemorizedBtn title="Confirm" big={false}/>
         </div>
       );
     };
