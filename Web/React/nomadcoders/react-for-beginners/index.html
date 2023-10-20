@@ -3,13 +3,13 @@
   <body>
     <div id="root"></div>
   </body>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById('root');
-    function Btn({ title, changeValue }) {
-      console.log(title, 'was render');
+    function Btn({ title, fontSize = 16}) {
       return (
         <button
           style={{
@@ -18,23 +18,22 @@
             padding: "10px 20px",
             border: 0,
             borderRadius: "10px",
+            fontSize
           }}
-          onClick = {changeValue}
         >
           {title}
         </button>
       );
     }
-
-    const MemorizedBtn = React.memo(Btn);
-    
+    Btn.propTypes = {
+      title: PropTypes.string.isRequired,
+      fontSize: PropTypes.number,
+    }
     const App = () => {
-      const [value, setValue] = React.useState('Save Changes');
-      const changeValue = () => setValue("Revert Changes");
       return (
         <div>
-          <MemorizedBtn title={value} changeValue={changeValue}/>
-          <MemorizedBtn title="Confirm" big={false}/>
+          <Btn title={'Save Changes'} fontSize={18}/>
+          <Btn title={'continue'}/>
         </div>
       );
     };
